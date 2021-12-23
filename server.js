@@ -1,4 +1,4 @@
-const express = require('espress');
+const express = require('express');
 const path = require('path');
 const api = require('./routes/notes.js');
 const uniqid = require('uniqid');
@@ -6,6 +6,11 @@ const fs = require('fs');
 
 const PORT = process.env.PORT || 3001;
 const app = express();
+
+app.use(express.urlencoded({ extended: true }));
+app.use(express.json());
+
+app.use(express.static('public'));
 
 // GET Route for homepage
 app.get('*', (req, res) =>
