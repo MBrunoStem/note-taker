@@ -1,8 +1,6 @@
 const express = require('express');
-const path = require('path');
-const api = require('./routes/notes.js');
-const uniqid = require('uniqid');
-const fs = require('fs');
+const api = require('./routes/api.js');
+const html = require('./routes/html.js');
 
 const PORT = process.env.PORT || 3001;
 const app = express();
@@ -11,17 +9,9 @@ app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
 
 app.use(express.static('public'));
-
-// GET Route for homepage
-app.get('*', (req, res) =>
-  res.sendFile(path.join(__dirname, '/public/index.html'))
-);
-
-// GET Route for notes page
-app.get('/notes', (req, res) =>
-  res.sendFile(path.join(__dirname, '/public/notes.html'))
-);
+app.use('/api', api);
+app.use('/', html);
 
 app.listen(PORT, () =>
-  console.log(`App listening at http://localhost:${PORT}`)
+    console.log(`App listening at http://localhost:${PORT}`)
 );
