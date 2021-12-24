@@ -1,7 +1,7 @@
 # Note Taker ![License](./public/assets/images/LicenseMIT.png)
 
 ## Description
-Wrtie and save all your personal notes!
+Write down and save all your personal notes!
 
 ## User Story
 - WHEN I click the 'Get Started' button
