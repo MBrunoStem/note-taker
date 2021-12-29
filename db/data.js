@@ -6,10 +6,10 @@ const readFileAsync = util.promisify(fs.readFile)
 
 class Note {
     readNotes(){
-        return readFileAsync('/db/db.json', 'utf8');
+        return readFileAsync('db/db.json', 'utf8');
     };
     writeNotes(note){
-        return writeFileAsync('/db/db.json', JSON.stringify(note));
+        return writeFileAsync('db/db.json', JSON.stringify(note));
     };
     getNotes(){
         return this.readNotes().then((notes)=>{
@@ -36,9 +36,9 @@ class Note {
         return this.getNotes()
         .then ((notes) => [...notes, newNote])
         .then((noteUpdate) => this.writeNotes(noteUpdate))
-        .then(()=>{
-            newNote;
-        })
+        .then(()=>
+            newNote
+        )
     }
 }
 
