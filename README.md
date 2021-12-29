@@ -5,12 +5,12 @@ Write down and save all your personal notes!
 
 ## User Story
 ```
-- WHEN I click the 'Get Started' button
-- THEN I am taken to the notes page
-- WHEN I click on the title or text
-- THEN I am able to input my note
-- WHEN I click the save button
-- THEN my input is saved as a new note
+WHEN I click the 'Get Started' button
+THEN I am taken to the notes page
+WHEN I click on the title or text
+THEN I am able to input my note
+WHEN I click the save button
+THEN my input is saved as a new note
 ```
 
 ## Technologies Used
